@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Recommended order for implementation: -->
+<!-- add rules to styles.css that hide all section tags under main not having a class of 'active' -->
+<!-- scheduler (js file) -->
+<!-- homeView (js file, html below & css) -->
+<!-- calendartView (js file, html below & css) -->
+<!-- appointmentView (js file, html below & css) -->
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    var app;
+  </script>
+
+  <script src="scripts/viewer.js"></script>
+  <script src="scripts/scheduler.js"></script>
+  <script src="scripts/views/calendar.js"></script>
+  <script src="scripts/views/home.js"></script>
+  <script src="scripts/views/appointment.js"></script>
+</head>
+
+<body onload="app.homeView.load()">
+  <header class="header">
+    <h1>Tutoring Center</h1>
+  </header>
+  <main>
+    <section id="homeView">
+      <!-- Add container for list of profile cards (to be bound from code) -->
+      <!-- and a template of a profile card (wrapped by a selectable template tag) inside container -->
+      <div id="tutorList">
+        <h2 id="ourTutors">OUR TUTORS</h2>
+        <div id="tutorList_tutors" class="list-group">
+        </div>
+        <template>
+          <div class="tutorListItem">
+            <img src="http://placehold.it/150x150" class="tutorImage">
+            <div>
+              <span class="name"></span>
+              <button type="button" class="viewScheduleButton">View Schedule</button>
+            </div>
+            <div class="skillsList">
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+    <section id="calendarView">
+      <!-- h2 to be bound from code -->
+      <!-- Table for displaying a tutur's schedule goes here -->
+      <!-- with a row in the tbody for each day (Monday-Thursday). -->
+      <!-- Make id of second column in each row the day name ("Monday", etc.).  -->
+      <!-- Button to return to list should call app.homeView.load() -->
+    </section>
+    <section id="appointmentView">
+      <!-- Form to collect name (input) and notes (textarea) goes here -->
+      <!-- Cancel button calls app.homeView.load() -->
+      <!-- Book button calls app.appointmentView.save() -->
+    </section>
+  </main>
+</body>
+</html>
