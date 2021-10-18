@@ -86,8 +86,15 @@
       <!-- Form to collect name (input) and notes (textarea) goes here -->
       <!-- Cancel button calls app.homeView.load() -->
       <!-- Book button calls app.appointmentView.save() -->
-
-      <button type="button" class="button returnToListButton" onclick="app.homeView.load()">Return to List</button>
+      <h2>New Appointment</h2>
+      <form>
+        <label for="name" class="inputText">Name</label>
+        <input type="text" name="name" id="nameInput">
+        <label for="notes" class="inputText">Notes</label>
+        <input type="textarea" name="notes" id="notesInput">
+      </form>
+      <button type="button" class="button cancelButton" onclick="app.homeView.load()">Cancel</button>
+      <button type="button" class="button bookButton" onclick="app.homeView.load()">Book</button>
     </section>
   </main>
 </body>

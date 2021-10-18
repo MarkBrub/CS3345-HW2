@@ -32,9 +32,15 @@
                 tableData.innerText = "";
                 
                 if (apointment.length != 0) {
-                    console.log('apointment found')
+                    var notes = document.createElement('p');
+
+                    tableData.innerText = apointment[0].name;
+                    notes.innerText = apointment[0].notes;
+                    notes.classList.add('calenderNote');
+                    tableData.appendChild(notes);
                 } else {
                     var bookButton = document.createElement('button');
+
                     bookButton.type = 'button';
                     bookButton.classList.add('button');
                     bookButton.innerText = "Book Apointment";
