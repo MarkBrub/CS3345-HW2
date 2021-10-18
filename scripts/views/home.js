@@ -36,6 +36,7 @@
                     var clone = template.content.cloneNode(true);
                     var name = clone.querySelector('span');
                     var skillList = clone.querySelector('.skillsList');
+                    var button = clone.querySelector('.viewScheduleButton');
 
                     tutor.skills.forEach(function(skill) {
                         var newSkill = document.createElement('span');
@@ -45,6 +46,10 @@
                     });
 
                     name.innerText = tutor.name;
+
+                    button.onclick = function() {
+                        app.calendarView.load(tutor.id);
+                    };
 
                     fragment.appendChild(clone);
                 });

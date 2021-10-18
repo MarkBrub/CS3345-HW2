@@ -14,6 +14,37 @@
     //              - if appt exists, bind name and notes to td's innerHTML
     //                  - else add 'Book Appointment' button to td that call app.appointmentView.load() (with tutorId and day)
     //      - invoke app._changeView to show calendarView
-    app.calendarView = {};
+    app.calendarView = {
+        load: function (tutorId) {
+            var tutor = app.scheduler.getTutor(tutorId);
+            var title = document.querySelector('#scheduleForTitle');
+            var table = document.querySelector('#schedule')
+
+            title.innerHTML = 'SCHEDULE FOR ' + tutor.name.toUpperCase();
+
+            days.forEach(function (day) {
+                var apointment = app.scheduler.getAppointment(tutorId, day);
+                var tableData = table.querySelector('#' + day);
+
+                if (tableData.firstChild) {
+                    tableData.removeChild(tableData.firstChild);
+                }
+                tableData.innerText = "";
+                
+                if (apointment.length != 0) {
+                    console.log('apointment found')
+                } else {
+                    var bookButton = document.createElement('button');
+                    bookButton.type = 'button';
+                    bookButton.classList.add('button');
+                    bookButton.innerText = "Book Apointment";
+                    bookButton.onclick = function () { app.appointmentView.load(tutorId, day); };
+                    tableData.appendChild(bookButton);
+                }
+            });
+
+            app._changeView('calendarView');
+        }
+    };
 
 })(app || (app = {}));

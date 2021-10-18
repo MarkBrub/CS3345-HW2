@@ -1,87 +1,124 @@
 body {
-    margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 main > section:not(.active) {
-    display: none;
+  display: none;
 }
 
 main > section.active {
-    display: block;
+  display: block;
 }
 
 #ourTutors {
-    padding: 1em;
-    padding-bottom: 0;
-    font-size: 1.75em;
+  padding: 1em;
+  padding-bottom: 0;
+  font-size: 1.75em;
 }
 
 .tutorListItem {
-    display: inline-block;
-    border: #a09fa0;
-    border-style: solid;
-    border-width: .1em;
-    margin: 1%;
-    padding: 1em;
-    width: 44%;
+  display: inline-block;
+  border: #a09fa0;
+  border-style: solid;
+  border-width: 0.1em;
+  margin: 1%;
+  padding: 1em;
+  width: 44%;
 }
 
 .tutorImage {
-    float: left;
-    vertical-align: middle;
-    box-sizing: border-box;
-    margin-right: 1em;
-    size: auto;
+  float: left;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin-right: 1em;
+  size: auto;
 }
 
 .name {
-    font-size: 2em;
-    font-weight: bolder;
-    display: inline-block;
+  font-size: 2em;
+  font-weight: bolder;
+  display: inline-block;
 }
 
 .skillsList {
-    display: inline-block;
+  display: inline-block;
+}
+
+.button {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  color: white;
+  background-color: #569b84;
+  border-style: none;
+  border-radius: 0.6em;
+}
+
+.button:hover {
+  background-color: #5697af;
 }
 
 .viewScheduleButton {
-    float: right;
-    vertical-align: top;
-    height: 2.5em;
-    width: 10em;
-    color: white;
-    background-color: #569b84;
-    border-style: none;
-    border-radius: .6em;
-}
-
-.viewScheduleButton:hover {
-    background-color: #5697af;
+  float: right;
+  vertical-align: top;
 }
 
 .skill {
-    display: inline-block;
-    height: 2em;
-    border-radius: 1em;
-    background-color: #dfdedf;
-    text-align: center;
-    line-height: 2em;
-    font-weight: bold;
-    margin-right: .25em;
-    padding-left: 1em;
-    padding-right: 1em;
+  display: inline-block;
+  height: 2em;
+  border-radius: 1em;
+  background-color: #dfdedf;
+  text-align: center;
+  line-height: 2em;
+  font-weight: bold;
+  margin-right: 0.25em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 header {
-    background-color: #232123;
-    color: white;
-    height: 7.5em;
+  background-color: #232123;
+  color: white;
+  height: 7.5em;
 }
 
 header > h1 {
-    font-size: 2.5em;
-    margin: 0;
-    padding-top: .75em;
-    padding-left: .5em;
+  font-size: 2.5em;
+  margin: 0;
+  padding-top: 0.75em;
+  padding-left: 0.5em;
+}
+
+h2 {
+  padding-left: 2rem;
+}
+
+#hoursText {
+  padding-left: 2rem;
+}
+
+table {
+  margin: 2.5%;
+  margin-bottom: 0.5em;
+  width: 95%;
+
+  border-bottom: 0.1em solid #999999;
+}
+
+th {
+  background-color: #999999;
+}
+
+tr {
+  height: 3rem;
+}
+
+td {
+  padding-left: 1em;
+}
+
+.returnToListButton {
+  margin-left: 2rem;
 }

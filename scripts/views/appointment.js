@@ -12,6 +12,11 @@
     //      - pass appointment to app.scheduler.saveAppointment
     //      - clear the two form element values
     //      - navigate back to calendar using app.calendarView.load with the selected tutorId
-    app.appointmentView = {};
+    app.appointmentView = {
+        load: function (tutorId, day) {
+            console.log('view changed')
+            app._changeView('appointmentView');
+        }
+    };
 
 })(app || (app = {}));
