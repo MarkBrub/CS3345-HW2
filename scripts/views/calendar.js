@@ -22,6 +22,8 @@
 
             title.innerHTML = 'SCHEDULE FOR ' + tutor.name.toUpperCase();
 
+            console.log(app.scheduler.getAppointments());
+
             days.forEach(function (day) {
                 var apointment = app.scheduler.getAppointment(tutorId, day);
                 var tableData = table.querySelector('#' + day);
@@ -31,20 +33,20 @@
                 }
                 tableData.innerText = "";
                 
-                if (apointment.length != 0) {
+                if (apointment != undefined) {
                     var notes = document.createElement('p');
 
-                    tableData.innerText = apointment[0].name;
-                    notes.innerText = apointment[0].notes;
+                    tableData.innerText = apointment.name;
+                    notes.innerText = apointment.notes;
                     notes.classList.add('calenderNote');
                     tableData.appendChild(notes);
                 } else {
                     var bookButton = document.createElement('button');
-
                     bookButton.type = 'button';
                     bookButton.classList.add('button');
                     bookButton.innerText = "Book Apointment";
                     bookButton.onclick = function () { app.appointmentView.load(tutorId, day); };
+                    console.log(tutorId);
                     tableData.appendChild(bookButton);
                 }
             });

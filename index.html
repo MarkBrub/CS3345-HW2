@@ -89,12 +89,12 @@
       <h2>New Appointment</h2>
       <form>
         <label for="name" class="inputText">Name</label>
-        <input type="text" name="name" id="nameInput">
+        <input type="text" class="input" name="name" id="nameInput">
         <label for="notes" class="inputText">Notes</label>
-        <input type="textarea" name="notes" id="notesInput">
+        <textarea name="notes" class="input" id="notesInput"></textarea>
       </form>
       <button type="button" class="button cancelButton" onclick="app.homeView.load()">Cancel</button>
-      <button type="button" class="button bookButton" onclick="app.homeView.load()">Book</button>
+      <button type="button" class="button bookButton" onclick="app.appointmentView.save()">Book</button>
     </section>
   </main>
 </body>

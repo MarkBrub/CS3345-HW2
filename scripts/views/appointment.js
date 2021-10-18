@@ -13,9 +13,26 @@
     //      - clear the two form element values
     //      - navigate back to calendar using app.calendarView.load with the selected tutorId
     app.appointmentView = {
-        load: function (tutorId, day) {
-            console.log('view changed')
+        load: function(tutorId, day) {
+            selected = [tutorId, day];
+
+            console.log(selected);
+
             app._changeView('appointmentView');
+        },
+
+        save: function() {
+            var name = document.querySelector('#nameInput');
+            var notes = document.querySelector('#notesInput');
+            
+            let appt = new app.Appointment(selected[0], selected[1], name.value, notes.value);
+
+            app.scheduler.saveAppointment(appt);
+
+            name.value = "";
+            notes.value = "";
+
+            app.calendarView.load(selected[0]);
         }
     };
 

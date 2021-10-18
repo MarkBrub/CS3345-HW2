@@ -139,7 +139,8 @@ label {
   color: #6e6f70;
 }
 
-input {
+.input {
+  box-sizing: border-box;
   margin-left: 2.5%;
   margin-right: 2.5%;
   margin-bottom: 0.5em;
@@ -147,15 +148,34 @@ input {
   padding-left: 1em;
 }
 
-input:focus {
-  border-color: darkblue;
+.input:focus {
+  outline: #7da0d8 0.075em solid;
 }
 
 input[type="text"] {
   height: 3em;
 }
 
-input[type="textarea"] {
+textarea {
   height: 12em;
-  vertical-align: top;
+  text-align: start;
+  padding-top: 1em;
+}
+
+.cancelButton {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  background-color: #869db0;
+}
+
+.cancelButton:hover {
+  background-color: #5597af;
+}
+
+.bookButton {
+  width: 95%;
+  margin-top: 1em;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }

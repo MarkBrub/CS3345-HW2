@@ -59,16 +59,12 @@
         },
 
         getAppointment: function(tutorId, day) {
-            var apps = [];
-
-            appointments.forEach(function(apointment) {
-                if(apointment.tutorId == tutorId && apointment.day == day) apps.push(apointment);
+            return appointments.find(function(apointment) {
+                return apointment.tutorId == tutorId && apointment.day == day;
             });
-
-            return apps;
         },
 
-        saveAppoitment: function(appt) {
+        saveAppointment: function(appt) {
             appointments.push(appt);
         }
     };
